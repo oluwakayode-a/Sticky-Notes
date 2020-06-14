@@ -145,6 +145,9 @@ document.getElementById('note-form').addEventListener('submit', e => {
 document.querySelector('#note-list').addEventListener('click', e => {
     // check if the class list has an id of delete
     UI.deleteNote(e.target)
+
+    // delete the note using the id -- the hidden element (add index 1)
+    // convert string to number
     Store.deleteNote(Number(e.target.parentElement.children[1].value))
 })
 
@@ -156,6 +159,5 @@ document.querySelector('#color-select').addEventListener('click', e => {
 
         // add class to selected button
         e.target.classList.toggle('selected')
-        console.log(e.target.classList)
     }
 })
